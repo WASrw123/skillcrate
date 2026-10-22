@@ -3,7 +3,7 @@ import path from "node:path";
 import { loadConfig, loadPolicy } from "./config.js";
 import { readLock } from "./lock.js";
 import { readPlan } from "./plan.js";
-import { hashDirectory, nowIso, shortHash } from "./util.js";
+import { hashDirectory, looksLikeMojibake, nowIso, shortHash } from "./util.js";
 
 export function resolveProfile(config, name) {
   const profile = config?.profiles?.[name];
@@ -56,6 +56,9 @@ export function composeProfile({
     const skillFile = path.join(dir, "SKILL.md");
     if (!existsSync(skillFile)) throw new Error(`SKILL.md missing for ${name}`);
     const text = readFileSync(skillFile, "utf8").trim();
+    if (looksLikeMojibake(text)) {
+      throw new Error(`SKILL.md for ${name} looks like mojibake; reinstall or fix the skill encoding before composing`);
+    }
     used.push({ name, package: entry.package, sha256: actual });
     sections.push(`## Skill: ${name}\n\n- source: ${entry.package}\n- hash: ${shortHash(actual)}\n\n${text}`);
   }

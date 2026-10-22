@@ -79,6 +79,10 @@ export function relativeToCwd(value, cwd = process.cwd()) {
   return rel && !rel.startsWith("..") ? rel : value;
 }
 
+export function looksLikeMojibake(value) {
+  return /\uFFFD|鈺|â€|Ã[\u0080-\u00BF]/.test(String(value ?? ""));
+}
+
 export function nowIso() {
   return new Date().toISOString();
 }

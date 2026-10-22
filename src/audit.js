@@ -57,6 +57,12 @@ const PATTERNS = [
     label: "References a network endpoint",
     re: /\bhttps?:\/\/[^\s)]+/i,
   },
+  {
+    id: "encoding-mojibake",
+    severity: "medium",
+    label: "Contains probable mojibake; the skill file may be double-encoded",
+    re: /\uFFFD|鈺|â€|Ã[\u0080-\u00BF]/,
+  },
 ];
 
 const SEVERITY_RANK = { low: 1, medium: 2, high: 3 };

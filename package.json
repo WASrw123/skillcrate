@@ -1,0 +1,40 @@
+{
+  "name": "skillcrate",
+  "version": "0.1.0",
+  "description": "Local-first supply chain for agent skills: discover, pin, audit, compose, verify, and ship.",
+  "type": "module",
+  "bin": {
+    "skillcrate": "bin/skillcrate.js"
+  },
+  "files": [
+    "bin",
+    "src",
+    "ui",
+    "docs",
+    "examples",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "test": "node --test",
+    "start": "node bin/skillcrate.js",
+    "check": "node bin/skillcrate.js doctor"
+  },
+  "keywords": [
+    "agent-skills",
+    "skills",
+    "cli",
+    "supply-chain",
+    "audit",
+    "lockfile",
+    "ai-agents"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "author": "SkillCrate contributors",
+  "license": "MIT",
+  "dependencies": {
+    "yaml": "^2.5.1"
+  }
+}

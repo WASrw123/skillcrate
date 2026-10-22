@@ -1,0 +1,10 @@
+version: 1
+allowedSources:
+  - "mattpocock/*"
+  - "vercel-labs/*"
+  - "claude-office-skills/*"
+  - "anthropics/*"
+  - "microsoft/*"
+deniedSources: []
+maxRisk: medium
+requirePlan: true

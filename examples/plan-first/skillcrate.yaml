@@ -1,0 +1,19 @@
+version: 1
+name: plan-first
+defaults:
+  scope: global
+  skillsDir: ~/.agents/skills
+profiles:
+  discovery:
+    description: Find and evaluate new skills
+    skills:
+      - find-skills
+  plan:
+    description: Plan before writing code
+    skills:
+      - grill-me
+  review:
+    description: Discover, then grill the plan
+    skills:
+      - find-skills
+      - grill-me

@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SkillCrate</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header class="top">
+    <div>
+      <div class="eyebrow">LOCAL-FIRST SKILL SUPPLY CHAIN</div>
+      <h1>SkillCrate</h1>
+      <p class="sub">Discover, pin, audit, compose, verify.</p>
+    </div>
+    <div class="stamp" id="stamp">loading</div>
+  </header>
+
+  <main>
+    <section class="grid">
+      <article class="card"><span class="label">Project</span><strong id="project">—</strong></article>
+      <article class="card"><span class="label">Pinned skills</span><strong id="count">—</strong></article>
+      <article class="card"><span class="label">Plan</span><strong id="plan">—</strong></article>
+      <article class="card"><span class="label">Scope</span><strong id="scope">—</strong></article>
+    </section>
+
+    <section class="panel">
+      <div class="panel-head"><h2>Pinned skills</h2><span class="hint">content-hashed</span></div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Skill</th><th>Source</th><th>Scope</th><th>Hash</th><th>Installed</th></tr></thead>
+          <tbody id="skills"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="panel-head"><h2>Profiles</h2><span class="hint">compose a bundle</span></div>
+      <div id="profiles" class="profiles"></div>
+    </section>
+
+    <section class="panel">
+      <div class="panel-head"><h2>Next action</h2></div>
+      <pre id="next"></pre>
+    </section>
+  </main>
+
+  <footer>SkillCrate · local dashboard · no telemetry</footer>
+  <script src="/app.js"></script>
+</body>
+</html>
